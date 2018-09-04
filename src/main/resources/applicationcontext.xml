@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="customerRepository" class="repository.HibernateCustomerRepositoryImpl"></bean>
+
+    <!--This is setter injection. This need a setter method for the property.-->
+    <bean name="customerService" class="service.CustomerServiceImpl">
+        <property name="customerRepository" ref="customerRepository"/>
+    </bean>
+
+    <!--This is constructor injection. This need a constructor with property to set as argument.-->
+    <bean name="customerServiceConst" class="service.CustomerServiceImpl">
+        <constructor-arg index="0" ref="customerRepository"/>
+    </bean>
+
+
+    <!-- Autowire - spring automatically wire beans. There are four types of autowiring in spirng.-->
+    <!-- 1. byType - This allow a property to be autowired if excatly one bean of that property type exist within the container. -->
+    <!-- 2. byName - Do autowiring based on name of bean and property. -->
+    <!-- 3. constructor - same as byType but uses constructor injection. -->
+    <!-- 4. no - no autowiring bitch. -->
+
+
+    <bean name="customerRepository1" class="repository.HibernateCustomerRepositoryImpl1"></bean>
+
+    <!-- This should not work on autowire="byName" bcz the setter method is not there in customerServiceImpl-->
+    <bean name="customerService1" class="service.CustomerServiceImpl1" autowire="constructor">
+    </bean>
+</beans>
