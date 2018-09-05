@@ -2,7 +2,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import service.CustomerService;
 import service.CustomerService1;
-import service.CustomerServiceImpl;
 
 public class Application {
 
