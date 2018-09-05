@@ -1,11 +1,13 @@
-package repository;
+package com.aditya.repository;
 
-import model.Customer;
+import com.aditya.model.Customer;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HibernateCustomerRepositoryImpl1 implements CustomerRepository1{
+@Repository("customerRepositorySetter")
+public class HibernateCustomerRepositoryImplSetter implements CustomerRepositorySetter {
     public List<Customer> findAll(){
         List<Customer> customers = new ArrayList<>();
         Customer customer = new Customer();

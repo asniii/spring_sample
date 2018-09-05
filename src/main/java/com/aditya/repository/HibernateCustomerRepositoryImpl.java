@@ -1,10 +1,12 @@
-package repository;
+package com.aditya.repository;
 
-import model.Customer;
+import com.aditya.model.Customer;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository("customerRepository")
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
     public List<Customer> findAll(){

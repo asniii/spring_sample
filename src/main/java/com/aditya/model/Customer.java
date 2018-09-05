@@ -1,4 +1,4 @@
-package model;
+package com.aditya.model;
 
 public class Customer {
 
