@@ -26,7 +26,7 @@
 
     <bean name="customerRepository1" class="repository.HibernateCustomerRepositoryImpl1"></bean>
 
-    <!-- This should not work on autowire="byName" bcz the setter method is not there in customerServiceImpl-->
+    <!-- This should not work on autowire="byName" and autowire="byType" bcz the setter method is not there in customerServiceImpl-->
     <bean name="customerService1" class="service.CustomerServiceImpl1" autowire="constructor">
     </bean>
 </beans>
