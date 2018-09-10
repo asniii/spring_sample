@@ -1,8 +1,6 @@
+import com.aditya.service.CustomerService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import service.CustomerService;
-import service.CustomerServiceConstructor;
-import service.CustomerServiceImpl;
 
 public class Application {
 
@@ -14,9 +12,6 @@ public class Application {
         System.out.println(service.finalAll().get(0).getLastname());
 
         System.out.println("********************************************************************************************");
-
-        CustomerServiceConstructor serviceConstructor = applicationContext.getBean("customerServiceConstructor",CustomerServiceConstructor.class);
-        System.out.println(serviceConstructor.finalAll().get(0).getFirstname());
 
 
     }

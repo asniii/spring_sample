@@ -1,6 +1,6 @@
-package repository;
+package com.aditya.repository;
 
-import model.Customer;
+import com.aditya.model.Customer;
 
 import java.util.List;
 

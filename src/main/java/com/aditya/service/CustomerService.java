@@ -1,6 +1,6 @@
-package service;
+package com.aditya.service;
 
-import model.Customer;
+import com.aditya.model.Customer;
 
 import java.util.List;
 
