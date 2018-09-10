@@ -3,40 +3,25 @@ package com.aditya.service;
 import com.aditya.model.Customer;
 import com.aditya.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service("customerService")
-@Scope("prototype")
-//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CustomerServiceImpl implements CustomerService {
 
-    // For member injection.
-    //@Autowired
-    private CustomerRepository customerRepository ;
-
-    public CustomerServiceImpl() {
-    }
-
-    // For constructor injection
+    //This is member variable autowire.
     @Autowired
-    public CustomerServiceImpl(CustomerRepository customerRepository){
-        System.out.println("We are using constructor injection.");
-        this.customerRepository = customerRepository;
-    }
+    private CustomerRepository customerRepository;
 
-    //For setter injection
-    //@Autowired
-    public void setCustomerRepository(CustomerRepository customerRepository){
-        System.out.println("We are using setter injection");
-        this.customerRepository = customerRepository;
-    }
+    @Value("dbAddresss")
+    private String dbAddress;
+
 
     @Override
     public List<Customer> finalAll(){
+        System.out.println("dbAddress is " + dbAddress);
         return customerRepository.findAll();
     }
 }
