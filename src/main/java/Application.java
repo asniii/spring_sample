@@ -21,6 +21,8 @@ public class Application {
          *
          * the singleton design pattern restrict the instantiation of class to one object. This is the default scope. That means
          * Single instance per Spring container.
+         *
+         * but a prototype scope gives a new bean everytime we ask for.
          */
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
@@ -40,7 +42,7 @@ public class Application {
          *
          <bean name="customerRepository"
          class="repository.HibernateCustomerRepositoryImpl"
-         scope="singleton">
+         scope="prototype">
          </bean>
 
          */

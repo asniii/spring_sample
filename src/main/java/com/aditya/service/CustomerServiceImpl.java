@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service("customerService")
-@Scope("singleton")
-//@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+@Scope("prototype")
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CustomerServiceImpl implements CustomerService {
 
     // For member injection.
