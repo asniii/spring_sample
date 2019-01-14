@@ -19,8 +19,9 @@ public class Application {
          *      Global
          *
          *
-         * the singleton design pattern restrict the instantiation of class to one object. This is the default scope. That means
-         * Single instance per Spring container.
+         * the singleton design pattern restrict the instantiation of class to one object(one object for one id,
+         * a very nice example given at https://dzone.com/articles/an-interview-question-on-spring-singletons). This is
+         * the default scope. That means Single instance per Spring container.
          */
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
